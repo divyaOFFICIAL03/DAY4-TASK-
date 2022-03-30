@@ -1,0 +1,606 @@
+4th task :
+
+console.log("hello world")
+
+
+How to compare two JSON have the same properties without order?  4 task
+var obj1 = { name: "Person 1", age:5 };
+var obj2 = { age:5, name: "Person 1" };
+
+
+var obj1={name:"person 1",age:5};
+var obj22={age:5,name:"person 1"};
+
+
+
+function isEqual(obj1, obj2) {
+  if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+    return false;
+  }
+  for (let key in obj1) {
+    if (obj1[key] !== obj2[key]) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log(isEqual(obj1, obj2));
+
+
+
+
+
+2.// Use the rest countries API url -> https://restcountries.eu/rest/v2/all and display all the country flags in console
+
+
+var xhr = new XMLHttpRequest();
+
+ xhr.open("GET", "https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+ xhr.send();
+
+ xhr.onload=function()
+
+ {
+     if(xhr.status>=200 && xhr.status<300)
+     {
+         var data=JSON.parse(xhr.response);
+        //  console.log(data);
+     }
+    for(var i=0;i<data.length;i++){
+
+    var name=data[i];
+    var user=data[i];
+
+
+
+    var flag=data[i];
+    var capital=data[i];
+    console.log(name);
+    console.log(user);
+    console.log(flag);
+    console.log(capital);
+    }
+}
+
+3.Use the same rest countries and print all countries name, region, sub region and population
+
+
+var xhr = new XMLHttpRequest();
+
+ xhr.open("GET", "https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+ xhr.send();
+
+ xhr.onload=function()
+
+ {
+     if(xhr.status>=200 && xhr.status<300)
+     {
+         var data=JSON.parse(xhr.response);
+         //  console.log(data);
+    
+for(let c of data){
+    console.log(`
+    name:${c.name}
+    region:${c.region}
+    sub region:${c.subregion}
+    population:${c.population}
+
+    `);
+}
+     }else{
+         console.log("data is not available");
+     
+     }
+    }
+
+4.
+1.Declare four variables without assigning values and print them in console
+var name1;
+var name2;
+var name3;
+var name4;
+console.log(name1,name2,name3,name4);
+
+2.How to get value of the variable myvar as output
+var myvar= 1;
+console.log("myvar");
+
+3. Declare variables to store your first name, last name, marital status, country and age in multiple lines
+let profile ={
+    firstname:"Divya",
+    lastname:"Manickam",
+    age:26,
+    martialstatus:"unmarried",
+    country:"india",
+
+}
+
+console.log(profile);
+
+4. Declare variables to store your first name, last name, marital status, country and age in a single line
+
+let profile=[{firstname:"divya",lastname:"manickam",maritalstatus:"unmarried",age:"26",country:"india"}];
+for(let p of profile){
+console.log(`${p.firstname},${p.lastname},${p.maritalstatus},${p.age},${p.country}`);
+}
+5. Declare variables and assign string, boolean, undefined and null data types
+var a="hello";
+var b=true;
+var c=undefined;
+var d=null;
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+
+6. Convert the string to integer
+parseInt()
+Number()
+Plus sign(+)
+parseInt()
+let a=11.35;
+let b=parseInt(a)
+console.log(b);
+console.log(typeof(b));
+
+Number()
+let a=("11.30");
+let b=Number(a);
+console.log(b)
+console.log(typeof(b));
+
+Plus sign(+)
+let n=5;
+n++;
+console.log(n);
+7. Write 6 statement which provide truthy & falsey values.
+1st statement:
+let value1=1;
+let value2="1";
+console.log(value1==value2);
+console.log(value1===value2);
+
+2nd statement:
+
+var data=null;
+var data1=undefined;
+console.log(data==data1);
+console.log(data===data1);
+
+3rd statement:
+
+let object1={};
+let object2={};
+console.log(object1==object2);
+object1=object2;
+console.log(object1===object2);
+
+4th statement:
+
+var data1=6;
+var data2=[6];
+console.log(data1==data2);
+console.log(data1===data2);
+
+5th statement:
+
+let x=0;
+let y=false;
+console.log(x==y);
+console.log(x===y);
+
+6th statement:
+
+let a=[];
+let b=false;
+console.log(a==b);
+console.log(a===b);
+
+
+Task 2: Simple Programs todo for Operators
+1.Square of a number
+
+var a=8**2;
+console.log(a);
+
+2.Swapping 2 numbers
+let a=[1,2,3,4,5];
+let b=[5,6,7,8,9];
+temp=a;
+a=b;
+b=temp;
+console.log(`
+${a}
+${b}
+`);
+
+3.Addition of 3 numbers
+
+let a=10;
+let b=20;
+let c=30;
+x=a+b+c;
+console.log(x);
+
+4.Celsius to Fahrenheit conversion
+
+let celsius=50;
+let temp;
+temp=celsius;
+let fahrenheit=temp* (9/5)+32;
+console.log(fahrenheit);
+
+// 5.Meter to miles
+let meter=4000;
+let temp=((meter)*0.000621371);
+console.log(`${temp}miles`);
+
+// 6.Pounds to kg
+let pounds=3000;
+let temp=pounds*(0.453592);
+console.log(`${temp}kg`);
+
+7. Calculate Batting Average
+
+let hit=180;
+let bats=40;
+let temp=hit/bats;
+console.log(`${temp}avg`);
+
+
+
+Calculate five test scores and print their average
+
+let grades=(68,78,92,98,91);
+ for(var i = 0; i < grades. length; i++) 
+ { 
+     total += grades[i];
+     } 
+ var avg = total / grades;
+ console.log(total);
+ console.log(avg);
+
+9.Power of any number x ^ y.
+
+let X = 2;
+let Y= 3;
+console. log( X ^ Y);
+console. log( Math.pow(X,Y));
+
+10.Calculate Simple Interest
+let profit=60000;
+var rateofinterest =5;
+let yearofdeposit=3;
+let interest=profit*rateofinterest*yearofdeposit;
+console.log(`the last year:${interest/100}`);
+
+11.Calculate area of an equilateral triangle
+
+AB is a 15cm
+let AB=11;
+let formula=AB*2;
+let area=0.3581*formula;
+console.log(`area of an equilateral triangle:${area}cm`)
+
+
+12.Area Of Isosceles Triangle
+let height=25;
+let base=10;
+let area=0.2*height*base;
+console.log("Area Of Isosceles Triangle:",area);
+
+13.Volume Of Sphere
+let radius = 5; 
+let volume = (4/3)* Math. PI * Math. pow(radius, 3); 
+console.log(volume);
+
+14.Volume Of Prism
+
+let a=[2,8,9];
+[l,b,h]=[2,8,9];
+let volume=(l*b*h);
+console.log("Volume Of Prism",volume,"inch");
+
+15.Find area of a triangle.
+var side1 = 5; 
+var side2 = 6; 
+var side3 = 7; 
+var s = (side1 + side2 + side3)/2;
+var area =  Math.sqrt(s*((s-side1)*(s-side2)*(s-side3)));
+console.log("area of a triangle:",area);
+
+16.Give the Actual cost and Sold cost, Calculate Discount Of Product
+
+let actualcost=18000;
+let Soldcost=6000;
+let temp=actualcost-Soldcost;
+console.log("Discount Of Product:",(temp/actualcost)*100);
+
+17.Given their radius of a circle and find its diameter, circumference and area
+let radius=4;
+let diameter=2*radius;
+let circumference=2*3.1415*radius;
+let area=3.1415*radius**2;
+console.log(radius);
+console.log("the circle of circumference",area);
+console.log("the circle of area",circumference);
+
+18.Given two numbers and perform all arithmetic operations.
+let a=10;
+let b=20;
+console.log(a+b);
+console.log(a-b);
+console.log(a*b);
+console.log(a/b);
+console.log(a%b);
+// 19.Display the asterisk pattern as shown below(No loop needed):
+let a="*****";
+console.log(`
+${a}
+${a}
+${a}
+${a}
+${a}
+`);
+
+20.Calculate electricity bill?
+For example, a consumer consumes 100 watts per hour daily for one month. Calculate the total energy bill of that consumer if per unit rate is 10?
+let day1=100;
+let perunit=10;
+let month=day1*31;
+console.log( "total energy per month",month, "watts");
+let monthlyunit=(month/1000)-100;
+console.log("the electricity bill on per month:",(monthlyunit*10));
+
+21. Program To Calculate CGPA
+let grades=[10,20,18,15,23];
+let total=0;
+for(let t of grades){
+    total+=t;
+
+}
+console.log(total);
+console.log("THE CGPA IS:",total/5);
+
+
+Task 3: Simple Programs todo for Condition , Looping and Arrays
+1. Write a loop that makes seven calls to console.log to output the following triangle:
+
+let a=["#"];
+
+for (let i= "#"; i.length < 8; i += "#"){
+   
+    console.log(i);
+}
+
+2.Iterate through the string array and print it contents
+var strArray= ["<option>Jazz</option>",
+,"<option>Blues</option>",
+,"<option>New Age</option>",
+,"<option>Classical</option>",
+,"<option>Opera</option>"]
+for(i=0;i<strArray.length;i++){
+
+}
+
+console.log(strArray[i]);
+
+3.var myarray=[11,22,33,44,55]
+write a code to count the elements in the array . Don’t use length property
+Declare an empty array;
+
+function addvalue(array,value){
+    return array.push(value)
+}
+let v=addvalue([11,22,33,44,55]);
+console.log(v)
+
+
+//4. Create an array called foods holds the names of your top 20 favorite foods, starting with the best food.
+let foods=["idly","dhosa","mutton biriyani","dhandhuri","prone","tomoto rice","eggrice" ,"chickenrice"
+,"pizza","fishfry","burgur","poori","falooda","rasagulla","lemonrice","fishrice","kadabiriyani","eggnoodles","maggi","globejamun"];
+// console.log(foods);
+
+// Foods variable holds the names of your top 20 favorite foods, starting with the best food. How can you find your fifth favorite food?
+// console.log(foods[4]);
+
+let length=foods.length;
+console.log(length);
+
+
+
+Starting from the existing friends variable below, change the element that is currently “Mari” to “Munnabai”.
+let friends = [
+    "Mari",
+    "MaryJane",
+    "CaptianAmerica",
+    "Munnabai",
+    "Jeff",
+    "AAKchandran"
+    ];
+    friends.splice(0,1 ,"Munnabai");
+
+    function dataHandling(input){
+        for (var i = 0; i < input.length; i++) {
+        console.log(input[i]);
+        }
+        }
+        dataHandling(friends);
+
+
+        Starting from the friends variable below, Loop and Print the names till you meet CaptianAmerica.
+
+        let friends = [
+                "Mari",
+                "MaryJane",
+                "CaptianAmerica",
+                "Munnabai",
+                "Jeff",
+                "AAKchandran"
+                ];
+    function dataHandling(input){
+    for (var i = 0; i < input.length; i++) {
+        if(input[i]==="CaptianAmerica"){
+            break;
+
+        }else{
+            console.log(input[i]);
+    }
+    }
+}
+    dataHandling(friends);
+
+
+    Find the person is ur friend or not.
+    let friends = [
+        "Mari",
+        "MaryJane",
+        "CaptianAmerica",
+        "Munnabai",
+        "Jeff",
+        "AAKchandran"
+        ];
+
+        function dataHandling(input, name){
+            for (var i = 0; i < input.length; i++) {
+                if(input[i]===name){
+                    return input[i]
+                
+                }
+            }
+            }
+            let found = dataHandling(friends,"Jeff");
+            console.log(found);
+
+
+            We have two lists of friends below. Use array methods to combine them into one alphabetically-sorted list.
+            var friends1 = [
+                    "Mari",
+                    "MaryJane",
+                    "CaptianAmerica",
+                    "Munnabai",
+                    "Jeff",
+                    "AAKchandran"
+                    ];
+var friends2 = [
+"Gabbar",
+"Rajinikanth",
+"Mass",
+"Spiderman",
+"Jeff",
+"ET"
+];
+function dataHandling(input1,input2){
+let totalfriends=[...input1,...input2];
+console.log(totalfriends.sort());
+
+}
+dataHandling(friends1,friends2);
+
+
+1.Get the first item, the middle item and the last item of the array
+
+let array=[10,20,50,60,80,85];
+console.log(array[0]);
+console.log(array[2]);
+console.log(array[5]);
+
+2.Add your name to the end of the friends array, and add another name to beginning
+
+let friends = [
+        "Mari",
+        "MaryJane",
+        "CaptianAmerica",
+        "Munnabai",
+        "Jeff",
+        "AAKchandran"
+        ];
+
+        friends.push("divya");
+        friends.unshift("kamalesh");
+        console.log(friends);
+
+
+3.Add Mr or Ms to the names in the friends array.
+
+let friends = [
+            "Mari",
+            "MaryJane",
+            "CaptianAmerica",
+            "Munnabai",
+            "Jeff",
+            "AAKchandran"
+            ];
+
+            let temp="";
+            for(let n of friends){
+                temp=temp+"Mr."+n+"/";
+            }
+            console.log(temp)
+
+
+
+
+4. Concat all the names the friends array and return as comma “,” seperated string.
+
+var friends = [
+                "Mari",
+                "MaryJane",
+                "CaptianAmerica",
+                "Munnabai",
+                "Jeff",
+                "AAKchandran"
+                ];
+                var friends=friends.join(",");
+                console.log(friends);
+
+5. Find the friends names who has letter ‘a’ and return the list.            
+
+var friends = [
+                    "Mari",
+                    "MaryJane",
+                    "CaptianAmerica",
+                    "Munnabai",
+                    "Jeff",
+                    "AAKchandran"
+                    ];
+                    let length=friends.length;
+                    console.log("the avg length of friends:",length);
+
+
+Objects:
+
+What the output
+
+myobject = {1:one,"11":1,"name":"arun"}
+console.log(myobject.11); 
+console.log(myobject.name);
+output://line of 777
+Uncaught SyntaxError: missing ) after argument list
+
+
+
+Write out an object literal to represent the data below.
+
+// Guvi, Geek, 6, IIT-M RP,Chennai.
+var myObject= {
+        name:'Guvi Geek',
+        num:2,
+        land:"IIT-M RP",
+        city:"Chennai"};
+
+console.log(myObject);
+
+How would you represent the following data using a combination of object literals and arrays? (You can describe a strategy without typing or writing out the whole thing.)
+Guvi, Geek, 6, IIT-M RP,Chennai.
+Amazon, Inc, 31, SP Infocity, Chennai.
+Google, Alphabet, 34 Amphitheater Parkway, MountainView.
+Tesla, Inc , 32, 333 Santana Row,San Jose.
+
+
+var myObject=["Guvi, Geek, 6, IIT-M RP,Chennai",
+ "Amazon", "Inc", 31, "SP Infocity", "Chennai",
+ "Google", "Alphabet", "34 Amphitheater Parkway", "MountainView",
+ "Tesla", "Inc" , "32", "333 Santana Row","San Jose."];
+
+ console.log(myObject);
